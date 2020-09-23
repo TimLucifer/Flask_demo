@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+<form method="post">
+<label>course：</label> <input id="course" name="course" type="text" value=""><br/>
+<input id="submit" name="submit" type="submit" value="提交">
+</form>
+
+{% for message in get_flashed_messages() %}
+    {{ message }}
+{% endfor %}
+
+<ul>
+    {% for course_name in course_names %}
+        <li>{{ course_name.name }}</li>
+    {% endfor %}
+</ul>
+
+</body>
+
+</html>

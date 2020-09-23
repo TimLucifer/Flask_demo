@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+<form method="post">
+<label>S_name：</label> <input id="name" name="name" type="text" value=""><br/>
+<label>S_age：</label> <input id="age" name="age" type="text" value=""><br/>
+<label>S_email：</label> <input id="email" name="email" type="text" value=""><br/>
+    {% for course_name in course_names %}
+        <input type="checkbox" name=course_name value={{ course_name.id }}>{{ course_name }}<br/>
+    {% endfor %}
+<input id="submit" name="submit" type="submit" value="提交">
+</form>
+{% for message in get_flashed_messages() %}
+    {{ message }}
+{% endfor %}
+</body>
+
+</html>
